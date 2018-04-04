@@ -1,0 +1,157 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: "Arial";
+    font-size: 10px;
+}
+
+.main-container {
+    flex: 0 1 500px;
+    text-align: center;
+    margin-top: 100px;
+    background-color: #eee;
+    padding: 20px 50px 50px 50px;
+    border-radius: 5px;
+}
+
+h1 {
+    color: #aaa;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+.form-container {
+    display: flex;
+    height: 40px;
+}
+
+input {
+    flex: 3 1 80%;
+    border-radius: 5px;
+    border-style: none;
+    outline: none;
+    padding-left: 10px;
+    font-size: 130%;
+    color: #aaa;
+}
+
+input::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+input:focus {
+    border: 1px solid #8B8787;
+}
+
+button.btn-add-item {
+    flex: 1 1 20%;
+    margin-left: 5px;
+    border-style: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #8B8787;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+    font-size: 190%;
+    text-align: left;
+    color: #777373;
+}
+
+li {
+    margin-bottom: 7px;
+    padding-left: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+}
+
+li:hover {
+    background-color: #F2F2F2;
+}
+
+i {
+    padding: 0 20px;
+    display: none;
+    transition : all .5s linear;
+}
+
+li:hover i {
+    display: list-item;
+    flex: 3 1 25%;
+    cursor: pointer;
+    position: relative;
+}
+
+i.up:hover::after {
+    content: 'up';
+}
+
+i.down:hover::after {
+    content: 'down';
+}
+
+i.btn-red:hover::after {
+    content: 'delete';
+}
+
+i.btn-green:hover::after {
+    content: 'add';
+}
+
+i.up:hover::after,
+i.down:hover::after,
+i.btn-red:hover::after,
+i.btn-green:hover::after {
+    position: absolute;
+    left: 20px;
+    top: 25px;
+    padding: 3px;
+    background-color: #A19A9A;
+    color: #BCB5B5;
+    font-size: 60%;
+    border-radius: 3px;
+    transition : all .5s linear;
+}
+
+i:active {
+    margin-top: 3px;
+}
+
+li > span {
+    flex: 1 0 25%;
+ }
+
+.btn-green {
+    color: green;
+}
+
+.btn-red {
+    color: red;
+}
+
+.remove-item {
+    text-decoration: line-through;
+    font-style: italic;
+    color: #C7C2C2;
+}
+
+.btn-disabled {
+    pointer-events: none;
+    opacity: .3;
+    cursor: none;
+}
